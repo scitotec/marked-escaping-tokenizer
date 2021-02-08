@@ -1,0 +1,8 @@
+*.tar.gz
+*.tar
+*.tgz
+.DS_Store
+node_modules
+package-lock.json
+src/*
+babel.config.json

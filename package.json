@@ -1,0 +1,34 @@
+{
+  "name": "marked-escaping-tokenizer",
+  "version": "0.0.1",
+  "description": "A custom tokenizer to disable custom HTML in Markdown",
+  "main": "lib/marked-escaping-tokenizer.js",
+  "scripts": {
+    "build": "babel src --out-file lib/marked-escaping-tokenizer.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scitotec/marked-escaping-tokenizer.git"
+  },
+  "keywords": [
+    "markdown",
+    "marked"
+  ],
+  "author": "Scitotec GmbH",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/scitotec/marked-escaping-tokenizer/issues"
+  },
+  "homepage": "https://github.com/scitotec/marked-escaping-tokenizer#readme",
+  "peerDependencies": {
+    "marked": "1.x || 2.x"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.13",
+    "@babel/core": "^7.12.13",
+    "@babel/preset-env": "^7.12.13",
+    "babel-preset-minify": "^0.5.1",
+    "marked": "^2.0.0"
+  }
+}
