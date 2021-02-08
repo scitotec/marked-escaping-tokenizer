@@ -1,5 +1,5 @@
 [![npm version](https://img.shields.io/npm/v/marked-escaping-tokenizer.svg)](https://www.npmjs.com/package/marked-escaping-tokenizer)
-[![license](https://img.shields.io/npm/l/@marked-escaping-tokenizer.svg)](./LICENSE)
+[![license](https://img.shields.io/npm/l/marked-escaping-tokenizer.svg)](./LICENSE)
 
 # marked-escaping-tokenizer
 A custom tokenizer to disable custom HTML in [Marked Markdown](https://www.npmjs.com/package/marked) made by [Scitotec GmbH](https://scitotec.de).
