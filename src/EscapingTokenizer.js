@@ -4,11 +4,19 @@ export class EscapingTokenizer extends Tokenizer {
   
     html(src) {
       const token = super.html(src)
-      return (!token) ? undefined : {
+      if (!token) return undefined
+      const text = this.escaper(token.raw)
+      let tokens
+      if (this.lexer) {
+        tokens = token.tokens || []
+        this.lexer.inline(text, tokens)
+      }
+      return {
         ...token,
         type: 'paragraph',
         pre: false,
-        text: this.escaper(token.raw),
+        text,
+        tokens,
       }
     }
   
