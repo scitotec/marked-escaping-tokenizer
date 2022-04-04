@@ -41,6 +41,7 @@ const html = marked(input, { tokenizer: tokenizer })
 
 ```
 npm version <major|minor|patch>
+npm run build
 git push <version>
 git push
 npm publish
