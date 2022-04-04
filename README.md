@@ -37,3 +37,11 @@ tokenizer.escaper = (s) => escapeHtml(s)
 const html = marked(input, { tokenizer: tokenizer })
 ```
 
+## Publishing
+
+```
+npm version <major|minor|patch>
+git push <version>
+git push
+npm publish
+```
