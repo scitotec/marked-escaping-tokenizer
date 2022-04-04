@@ -22,13 +22,13 @@
   },
   "homepage": "https://github.com/scitotec/marked-escaping-tokenizer#readme",
   "peerDependencies": {
-    "marked": "1.x || 2.x"
+    "marked": "1.x || 2.x || 3.x || 4.x"
   },
   "devDependencies": {
     "@babel/cli": "^7.12.13",
     "@babel/core": "^7.12.13",
     "@babel/preset-env": "^7.12.13",
     "babel-preset-minify": "^0.5.1",
-    "marked": "^2.0.0"
+    "marked": "^4.0.12"
   }
 }
