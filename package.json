@@ -1,6 +1,6 @@
 {
   "name": "marked-escaping-tokenizer",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A custom tokenizer to disable custom HTML in Markdown",
   "main": "lib/marked-escaping-tokenizer.js",
   "scripts": {
