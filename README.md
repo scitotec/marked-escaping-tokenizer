@@ -12,30 +12,46 @@ Another reason is, that generally escaped Markdown provides a much more secure w
 
 ## How to use it with Marked?
 
-You can just create a new `EscapingTokenizer` with an escaper of your choice. We recommend [escape-html](https://www.npmjs.com/package/escape-html).
+You can just create a new `EscapingTokenizer` with an escaper of your choice. We bundle [escape-html](https://www.npmjs.com/package/escape-html) as a default escaper for you.
 
 Install with your package manager:
 
 ```bash
 npm install --save marked-escaping-tokenizer
-npm install --save escape-html
 ```
 
 Configure and use:
 
 ```js
 import { EscapingTokenizer } from 'marked-escaping-tokenizer'
-import * as escapeHtml from 'escape-html'
 import * as marked from 'marked'
 
 // init your tokenizer
 const tokenizer = new EscapingTokenizer()
-tokenizer.escaper = (s) => escapeHtml(s)
+
+// use marked as you wish
+const html = marked(input, { tokenizer: tokenizer })
+```
+
+## Advanced usage
+
+### Configure the html escaper
+
+You can swap out the default escaper for an escaper of your choice to escape html in a given string:
+
+```js
+import { EscapingTokenizer } from 'marked-escaping-tokenizer'
+import * as marked from 'marked'
+
+// init your tokenizer
+const tokenizer = new EscapingTokenizer()
+tokenizer.escaper = (s) => s.replaceAll('<', '&lt;')
 
 
 // use marked as you wish
 const html = marked(input, { tokenizer: tokenizer })
 ```
+
 
 ## Publishing
 
