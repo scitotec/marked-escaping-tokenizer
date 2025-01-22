@@ -1,6 +1,8 @@
 node_modules
 lib
+dist
 *.tar.gz
 *.tar
 *.tgz
 .DS_Store
+package-lock.json

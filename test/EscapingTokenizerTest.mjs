@@ -1,7 +1,7 @@
 
 import { marked } from 'marked'
 import escapeHtml from 'escape-html'
-import { EscapingTokenizer } from '../src/EscapingTokenizer'
+import { EscapingTokenizer } from '../src/EscapingTokenizer.mjs'
 import { expect } from 'chai'
 
 

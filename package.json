@@ -2,9 +2,11 @@
   "name": "marked-escaping-tokenizer",
   "version": "0.1.2",
   "description": "A custom tokenizer to disable custom HTML in Markdown",
-  "main": "lib/marked-escaping-tokenizer.js",
+  "main": "dist/cjs/EscapingTokenizer.js",
+  "module": "dist/esm/EscapingTokenizer.js",
   "scripts": {
-    "build": "babel src --out-file lib/marked-escaping-tokenizer.js",
+    "rollup": "rollup -c --bundleConfigAsCjs",
+    "build": "rm -rf dist/ && npm run rollup",
     "test": "mocha"
   },
   "repository": {
@@ -25,14 +27,13 @@
     "marked": ">=4 <16"
   },
   "devDependencies": {
-    "@babel/cli": "^7.12.13",
-    "@babel/core": "^7.12.13",
-    "@babel/preset-env": "^7.12.13",
-    "@babel/register": "^7.17.7",
-    "babel-preset-minify": "^0.5.1",
+    "@rollup/plugin-commonjs": "^28.0.2",
+    "@rollup/plugin-node-resolve": "^16.0.0",
+    "@rollup/plugin-terser": "^0.4.4",
     "chai": "^4.3.6",
     "escape-html": "^1.0.3",
     "marked": "^15.0.6",
-    "mocha": "^9.2.2"
+    "mocha": "^9.2.2",
+    "rollup": "^4.31.0"
   }
 }
