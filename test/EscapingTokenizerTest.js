@@ -11,6 +11,8 @@ describe('EscapingTokenizer integration with escapeHtml', () => {
   beforeEach(() => {
     markedOptions = {
       tokenizer: new EscapingTokenizer(),
+      mangle: false,
+      headerIds: false,
     }
     markedOptions.tokenizer.escaper = s => escapeHtml(s)
   })
