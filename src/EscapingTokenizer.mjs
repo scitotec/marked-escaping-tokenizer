@@ -1,6 +1,9 @@
+import escapeHtml from 'escape-html'
 import { Tokenizer } from 'marked';
 
 export class EscapingTokenizer extends Tokenizer {
+
+    escaper = (s) => escapeHtml(s)
   
     html(src) {
       const token = super.html(src)
