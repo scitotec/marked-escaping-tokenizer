@@ -4,6 +4,7 @@
   "description": "A custom tokenizer to disable custom HTML in Markdown",
   "main": "dist/cjs/EscapingTokenizer.js",
   "module": "dist/esm/EscapingTokenizer.js",
+  "types": "index.d.ts",
   "scripts": {
     "rollup": "rollup -c --bundleConfigAsCjs",
     "build": "rm -rf dist/ && npm run rollup",
