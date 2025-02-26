@@ -11,3 +11,5 @@ babel.config.json
 rollup.config.mjs
 run-tests.sh
 .nvmrc
+.idea/*
+.vscode/*
