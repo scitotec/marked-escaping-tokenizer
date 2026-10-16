@@ -1,4 +1,4 @@
-#/usr/bin/env sh
+#!/usr/bin/env bash
 
 die() {
     echo "$1"
@@ -14,11 +14,11 @@ for version in {4..15}; do
       "marked@$version" > /dev/null 2>&1 || die "install failed for version $version"
     output=`script -q /dev/null npm run test`
     if [ $? -ne 0 ]; then
-        echo "${RED}FAILED${NC}"
+        printf '%b\n' "${RED}FAILED${NC}"
         echo "$output"
         die "test failed for version $version"
     else
-        echo "${GREEN}SUCCESS${NC}"
+        printf '%b\n' "${GREEN}SUCCESS${NC}"
     fi
 done
 
