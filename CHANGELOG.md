@@ -3,7 +3,7 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## 0.4.0 (unreleased)
+## 0.4.0 2026-10-16
 * Add support for marked@16, marked@17 and marked@18
 * Add an `exports` map with a native ESM build and ESM type definitions. This fixes `EscapingTokenizer` not being
   assignable to marked's `tokenizer` option in TypeScript projects using `moduleResolution` `node16`/`nodenext`.
