@@ -3,7 +3,7 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## 0.3.2 (unreleased)
+## 0.3.2 2026-10-16
 * **Security**: escape text after an inline `<pre>`, `<code>`, `<kbd>` or `<script>` tag. With marked 8 and later it was
   passed through as raw HTML, e.g. `<kbd>**b**<img src=x onerror=alert(1)//` rendered a live `<img>`.
 * Fix HTML blocks being escaped twice with marked 4 to 7
