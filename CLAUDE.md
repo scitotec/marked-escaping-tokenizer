@@ -20,11 +20,15 @@ npm run test:runtime                       # build + pack, require()/import it o
 dependency set with a plain `npm install` at the end. Its `script -q /dev/null <cmd>` call
 is BSD/macOS syntax.
 
-Publishing (from README):
+Publishing (from README): date the new version's `CHANGELOG.md` entry and commit it first
+(`npm version` needs a clean working tree), then
 
 ```bash
-npm version <major|minor|patch> && npm run build && git push <version> && git push && npm publish
+npm version <major|minor|patch> && npm run build && npm publish && git push --follow-tags
 ```
+
+npm can take ~10 minutes to serve a new version, and `npm view` may stay stale even longer;
+check `https://registry.npmjs.org/marked-escaping-tokenizer` instead.
 
 ## Architecture
 

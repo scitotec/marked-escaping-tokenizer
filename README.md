@@ -59,10 +59,11 @@ const html = marked.parse(input, { tokenizer })
 
 ## Publishing
 
+Put the changes under a dated heading for the new version in `CHANGELOG.md` and commit that first, since `npm version` needs a clean working tree. Then:
+
 ```
-npm version <major|minor|patch>
+npm version <major|minor|patch>   # bumps package.json, commits it and tags it as v<version>
 npm run build
-git push <version>
-git push
 npm publish
+git push --follow-tags
 ```
