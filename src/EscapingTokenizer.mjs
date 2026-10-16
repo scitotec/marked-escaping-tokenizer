@@ -5,8 +5,8 @@ export class EscapingTokenizer extends Tokenizer {
 
     escaper = (s) => escapeHtml(s)
   
-    html(src) {
-      const token = super.html(src)
+    html(...args) {
+      const token = super.html(...args)
       if (!token) return undefined
       const text = this.escaper(token.raw)
       let tokens
@@ -23,8 +23,8 @@ export class EscapingTokenizer extends Tokenizer {
       }
     }
   
-    tag(src, inLink, inRawBlock) {
-      const token = super.tag(src, inLink, inRawBlock)
+    tag(...args) {
+      const token = super.tag(...args)
       return (!token) ? undefined : {
         ...token,
         type: 'text',
@@ -32,11 +32,16 @@ export class EscapingTokenizer extends Tokenizer {
       }
     }
   
-    inlineText(src, inRawBlock, smartypants) {
-      const token = super.inlineText(src, inRawBlock, smartypants)
-      return (!token) ? undefined : {
+    inlineText(...args) {
+      const token = super.inlineText(...args)
+      if (!token) return undefined
+      // After an inline <pre>, <code>, <kbd> or <script> tag marked is "in a raw block" and
+      // passes the text through unescaped (flagged `escaped` since marked 15).
+      if (!token.escaped && !this.lexer?.state?.inRawBlock) return token
+      return {
         ...token,
-        text: inRawBlock ? this.escaper(token.raw) : token.text,
+        text: this.escaper(token.raw),
+        escaped: true,
       }
     }
   }

@@ -33,6 +33,33 @@ describe('EscapingTokenizer integration with escapeHtml', () => {
     expect(content).not.contains('<br>')
   })
 
+  it('escapes an html block exactly once', () => {
+    const content = toMarkdown('<div>hi</div>')
+    expect(content).contains('&lt;div&gt;hi&lt;/div&gt;')
+    expect(content).not.contains('&amp;')
+  })
+
+  describe('escapes text after an inline <pre>, <code>, <kbd> or <script>: ', () => {
+    it('in the same paragraph', () => {
+      const content = toMarkdown('<kbd>**b**<img src=x onerror=alert(1)//')
+      expect(content).not.contains('<img')
+      expect(content).contains('&lt;img')
+    })
+
+    it('in a later paragraph', () => {
+      const content = toMarkdown('x <code>\n\n*a*<img src=x onerror=alert(1)//')
+      expect(content).not.contains('<img')
+      expect(content).contains('&lt;img')
+    })
+  })
+
+  it('escapes text after an inline tag', () => {
+    // marked 15+ appends this text to the token tag() returns, so that token must not be flagged `escaped`
+    const content = toMarkdown('<b>x</b><img/src=x/onerror=alert(1)>')
+    expect(content).not.contains('<img')
+    expect(content).contains('&lt;img')
+  })
+
   it('may contain tables', () => {
     const content = toMarkdown(`
 |price|
