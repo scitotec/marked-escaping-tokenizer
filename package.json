@@ -5,6 +5,11 @@
   "main": "dist/cjs/EscapingTokenizer.js",
   "module": "dist/esm/EscapingTokenizer.js",
   "types": "index.d.ts",
+  "files": [
+    "dist",
+    "index.d.ts",
+    "CHANGELOG.md"
+  ],
   "scripts": {
     "rollup": "rollup -c --bundleConfigAsCjs",
     "build": "rm -rf dist/ && npm run rollup",
