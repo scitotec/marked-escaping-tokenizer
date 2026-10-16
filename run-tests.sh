@@ -8,7 +8,7 @@ RED='\033[0;31m'
 GREEN='\033[0;32m'
 NC='\033[0m'
 
-for version in {4..15}; do
+for version in {4..18}; do
     printf "Running tests with marked@$version..."
     npm install --no-progress --no-save --no-package-lock --no-audit --no-bin-links --no-fund \
       "marked@$version" > /dev/null 2>&1 || die "install failed for version $version"

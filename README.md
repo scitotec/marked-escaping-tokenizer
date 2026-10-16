@@ -35,6 +35,8 @@ const tokenizer = new EscapingTokenizer()
 const html = marked.parse(input, { tokenizer })
 ```
 
+Works with marked 4 up to 18. marked 16 and later are ESM only; to `require()` them from CommonJS you need Node.js 20.19+ or 22.12+.
+
 ## Advanced usage
 
 ### Configure the html escaper
