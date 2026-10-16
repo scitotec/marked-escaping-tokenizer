@@ -26,7 +26,9 @@
   "scripts": {
     "rollup": "rollup -c --bundleConfigAsCjs",
     "build": "rm -rf dist/ && npm run rollup && cp index.d.ts dist/esm/EscapingTokenizer.d.mts",
-    "test": "mocha"
+    "test": "mocha",
+    "test:runtime": "npm run build && mocha test/package/runtime.test.mjs",
+    "test:types": "npm run build && mocha test/package/types.test.mjs"
   },
   "repository": {
     "type": "git",
