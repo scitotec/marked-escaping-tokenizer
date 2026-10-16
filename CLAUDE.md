@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Commands
 
-Dependencies are not checked in — run `npm install` first (Node version pinned in `.nvmrc`: v20.17.0).
+Dependencies are not checked in — run `npm install` first (Node 24, see `.nvmrc`).
 There is no lockfile (`package-lock.json` is gitignored), so use `npm install`, not `npm ci`.
 
 ```bash
