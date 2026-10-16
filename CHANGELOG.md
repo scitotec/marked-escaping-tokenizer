@@ -3,6 +3,11 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 0.4.0 (unreleased)
+* Add an `exports` map with a native ESM build and ESM type definitions. This fixes `EscapingTokenizer` not being
+  assignable to marked's `tokenizer` option in TypeScript projects using `moduleResolution` `node16`/`nodenext`.
+  **breaking**: files in `dist/` can no longer be imported directly, and the ESM build is now `dist/esm/EscapingTokenizer.mjs`.
+
 ## 0.3.2 2026-10-16
 * **Security**: escape text after an inline `<pre>`, `<code>`, `<kbd>` or `<script>` tag. With marked 8 and later it was
   passed through as raw HTML, e.g. `<kbd>**b**<img src=x onerror=alert(1)//` rendered a live `<img>`.

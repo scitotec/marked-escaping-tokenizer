@@ -3,8 +3,21 @@
   "version": "0.3.2",
   "description": "A custom tokenizer to disable custom HTML in Markdown",
   "main": "dist/cjs/EscapingTokenizer.js",
-  "module": "dist/esm/EscapingTokenizer.js",
+  "module": "dist/esm/EscapingTokenizer.mjs",
   "types": "index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/esm/EscapingTokenizer.d.mts",
+        "default": "./dist/esm/EscapingTokenizer.mjs"
+      },
+      "default": {
+        "types": "./index.d.ts",
+        "default": "./dist/cjs/EscapingTokenizer.js"
+      }
+    },
+    "./package.json": "./package.json"
+  },
   "files": [
     "dist",
     "index.d.ts",
@@ -12,7 +25,7 @@
   ],
   "scripts": {
     "rollup": "rollup -c --bundleConfigAsCjs",
-    "build": "rm -rf dist/ && npm run rollup",
+    "build": "rm -rf dist/ && npm run rollup && cp index.d.ts dist/esm/EscapingTokenizer.d.mts",
     "test": "mocha"
   },
   "repository": {
